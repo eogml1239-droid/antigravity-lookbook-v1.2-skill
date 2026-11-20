@@ -1,0 +1,55 @@
+{
+  "schema": "antigravity-prompt-patches/1.0",
+  "updated_at": "2026-11-19",
+  "description": "AI-to-AI 실패 학습 캐시 DB. 불합격 이미지 교정 시 효과가 검증된 영문 프롬프트 패치(Delta)를 누적 저장하여 동일 실패 재발과 토큰 소모를 줄인다.",
+  "patches": {
+    "fabric_texture": {
+      "label": "[최우선 1순위] 옷의 직물 텍스처/원단 조직 미구현",
+      "add_prompt": "PRIORITY 1: ultra-faithful micro-level fabric texture and weave structure matching Image 2 hanger shot; crisp visible yarn grain, natural matte weave, authentic fiber thickness and soft raking side light that makes the exact textile surface clearly readable; zero smooth plastic or painted-on cloth",
+      "add_negative": "flat textureless fabric, plastic sheen, synthetic smooth cloth, painted-on garment, blurry fabric weave, AI-smoothed textile",
+      "hits": 0
+    },
+    "horizon_line": {
+      "label": "배경 수평선/바닥 경계선 노출",
+      "add_prompt": "a true seamless infinity-cove studio where the plain even medium-light gray backdrop curves smoothly into the floor with NO visible horizon line, NO floor edge, NO baseboard band and NO dark vignette; wall and floor are one continuous smooth gray tone",
+      "add_negative": "horizon line, floor edge, baseboard, seam, wall-floor boundary, dark vignette",
+      "hits": 0
+    },
+    "nose_visible": {
+      "label": "여성 모델 눈/코/이마 노출 (윗입술 크롭 위반)",
+      "add_prompt": "strictly cropped at the upper lip line; ONLY the lips, chin, neck and body down to the knees are visible inside the frame; zero eyes, zero nose, zero nostrils, zero forehead",
+      "add_negative": "visible nose, visible nostrils, visible eyes, forehead, full face, uncropped head",
+      "hits": 0
+    },
+    "floating_hair": {
+      "label": "중력 무시 / 뜨는 머리카락",
+      "add_prompt": "strict gravity-bound indoor studio space; hair hangs straight down with real physical weight against the neck and shoulders, zero floating strands, zero wind, zero levitating flyaways",
+      "add_negative": "floating hair, windblown hair, levitating strands, anti-gravity hair, unnatural volume",
+      "hits": 0
+    },
+    "sleeve_mismatch": {
+      "label": "소매 길이 사이즈표 불일치",
+      "add_prompt": "enforce exact garment sleeve length from size chart relative to model arm proportion; cuff end must sit precisely at the specified wrist/hand landmark with natural fabric drape",
+      "add_negative": "too short sleeves, rolled-up sleeves, oversized dangling sleeves",
+      "hits": 0
+    },
+    "hem_mismatch": {
+      "label": "총장/밑단 위치 사이즈표 불일치",
+      "add_prompt": "enforce exact garment body length from size chart relative to model height; hem line must align precisely at the specified hip/thigh/knee landmark",
+      "add_negative": "cropped hem, overly long hem, tucked-in hem unless specified",
+      "hits": 0
+    },
+    "noise_or_haze": {
+      "label": "필름 그레인·먼지·흐림·잔상 발생",
+      "add_prompt": "extremely clean high-resolution studio photograph, tack-sharp focus edge to edge (f/5.6-f/8), crisp fabric weave, zero film grain, zero dust specks, zero smudges, zero haze or ghosting",
+      "add_negative": "film grain, noise, dust, smudges, haze, soft focus, motion blur, ghosting, double edges",
+      "hits": 0
+    },
+    "sleeve_cuff_tab": {
+      "label": "소매 끝자락 커프 탭/단추 디테일 미구현",
+      "add_prompt": "MANDATORY CUFF DETAIL: reproduce the exact rectangular fabric sleeve cuff tabs with button near both wrist hems exactly as shown in Image 2; keep both cuffs clearly visible and crisp with clean hand-stitched tab edges",
+      "add_negative": "plain blank cuffs, missing sleeve tabs, smooth featureless sleeve ends, hidden wrists",
+      "hits": 1
+    }
+  }
+}
