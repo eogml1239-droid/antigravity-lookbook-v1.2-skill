@@ -1,0 +1,27 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+
+# Local runtime logs, caches & records
+cache/
+records/
+*.log
+*.jsonl
+*.bak
+*.bak.*
+
+# Secrets & environment
+.env
+.env.*
+*.key
+*.pem
+
+# OS & Editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
