@@ -29,7 +29,8 @@ description: >-
 ### 2.1 사전 확인 및 치수 명시 (필수)
 1. 생성 시작 전 `ask_question`으로 ① **모델 성별·번호**(여성 모델 1~4번 / 남성메인모델)와 ② **생성 컷 범위**를 확인한다.
 2. 채택된 모델의 신체 스펙(`스펙.json`)과 의류 세부 사이즈 치수를 영문 프롬프트 텍스트에 직접 명시한다. (`references/LOOKBOOK_PROMPTS_EN.md` 참조)
-3. 웹 Gemini에는 **정확히 2장(Image 1 모델 사진 + Image 2 상품 행거샷)**만 첨부하고, 나머지 모든 조건은 텍스트 프롬프트로 작성한다.
+3. 포즈·코디는 `references/룩북_포즈라이브러리.md`, `references/룩북_코디라이브러리.md`의 코드(`P=`, `O=`)로 지정하고, 코드에 해당하는 구도·의상 설명을 영문 프롬프트에 반영한다.
+4. 웹 Gemini에는 **정확히 2장(Image 1 모델 사진 + Image 2 상품 행거샷)**만 첨부하고, 나머지 모든 조건은 텍스트 프롬프트로 작성한다.
 
 ### 2.2 규모별 실행 분기
 - **소규모 (1~2색상 · 총 6컷 이하)**: `swarm` 오버헤드 없이 단일 턴에서 구조화 영문 프롬프트 작성 → `Part B 3차` 고속 첨부 → 1컷 합격 시 같은 채팅에서 재첨부 없이(0초) 2~N컷 연속 생성 → `lookbook_postprocess.py` 0토큰 후처리.
@@ -52,3 +53,5 @@ description: >-
 - `references/IMAGE_SEARCH_FAST_ATTACH.md` — 이미지 서칭 0초화 및 `Part B 3차` 43초 컷 첨부 지침
 - `references/LOOKBOOK_PROMPTS_EN.md` — 룩북 생성 표준 영문 프롬프트 템플릿
 - `references/JACC_SUBMODULE_SKILL.md` — JACC Verbatim 컨텍스트 압축 서브모듈 스펙
+- `references/룩북_포즈라이브러리.md` — 포즈 130종 코드표 (`LB P=W_DN12` 형식으로 호출, 룩북 생성 시 포즈 선택에 사용)
+- `references/룩북_코디라이브러리.md` — 체형별 코디 200종 코드표 (`LB O=W_TOP12` 형식, 포즈 코드와 `LB P=W_DN07 O=W_TOP12` 처럼 함께 사용)
