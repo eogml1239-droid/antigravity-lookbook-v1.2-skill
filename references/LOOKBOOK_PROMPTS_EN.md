@@ -15,7 +15,7 @@ Apply the following rules to every lookbook job.
 5. The gaze must never meet the camera and must look natural. The head direction must differ from cut to cut.
 6. The space is a gravity-bound space. Hair hangs down with real weight (no floating strands, no wind, no unnatural volume) and fabric folds follow gravity.
 7. Background: the same seamless gray studio wall as the model reference image, flowing into the floor with no horizon line, floor edge or vignette. Poses lean against the wall.
-8. Fit: put both the model measurements (height, weight, shoulder, bust, waist, hip) and the garment size-chart numbers (length, chest, shoulder, sleeve) directly in the prompt. Never invent values missing from the size chart. After generation, compare hem, cuff end and shoulder-seam position with the size chart and record it; if they do not match, do not shortlist the image, state why, and regenerate.
+8. Fit: put both the model measurements (height, weight, shoulder, bust, waist, hip) and the garment size-chart numbers (length, chest, shoulder, sleeve) directly in the prompt. Never invent or estimate values missing from the size chart (not from another size, a similar product or general knowledge): drop that measurement from the prompt entirely (no empty {placeholder}, no made-up number) and report it as "not in size chart". If a missing value is essential for the fit, ask me before generating. After generation, compare hem, cuff end and shoulder-seam position with the size chart and record it; if they do not match, do not shortlist the image, state why, and regenerate.
 9. All cuts of the same colour share one outfit (bottoms, shoes); only the pose changes. Every pose must look clearly different from every other pose; above all vary the head (gaze) direction and the hand positions.
 10. Save Gemini images only into the product folder G:\내 드라이브\Claude_산출물\YYYYMMDD_(product name)\ . When a new folder is created, add one line to _INDEX.md. Create files only under G:\내 드라이브\Claude_산출물\ , never on the Desktop.
 11. Pass/fail judging is mine. (In a session where I say "no per-cut judging", generate and save everything and let me choose from the final results.)
@@ -180,7 +180,7 @@ Remove the bottom-right Gemini star watermark from the saved lookbook images.
 Report in Korean and concisely, with these items:
 1. List of generated and saved cuts (colour, model, outfit, pose, file location).
 2. Confirmation of the applied rules (ratio, upper-lip crop, gaze away from camera, gravity hair, seamless background, same outfit per colour, distinct poses).
-3. Fit comparison: model numbers vs size-chart numbers, and the measured hem / cuff end / shoulder-seam positions. If not measured, write "not measured".
+3. Fit comparison: model numbers vs size-chart numbers, and the measured hem / cuff end / shoulder-seam positions. If not measured, write "not measured". If a value is missing from the size chart, write "not in size chart" and do not compare that item.
 4. Problems (nose visible, smeared fingers, colour drift, etc.) and whether regeneration is needed.
 5. Decisions left to me (choosing approved cuts, whether to continue with remaining colours).
 Never report "looks fine" from a small screenshot; assert details only after zooming in.
