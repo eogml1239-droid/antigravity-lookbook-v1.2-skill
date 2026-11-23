@@ -37,7 +37,9 @@ antigravity-lookbook-v1.2-skill/
 │   ├── WORKSPACE_GEMINI_v1.2.md          # 워크스페이스 통합 규칙 v1.2 전문
 │   ├── IMAGE_SEARCH_FAST_ATTACH.md       # Part B 3차 43초 컷 첨부 지침
 │   ├── LOOKBOOK_PROMPTS_EN.md            # 룩북 영문 프롬프트 템플릿
-│   └── JACC_SUBMODULE_SKILL.md           # JACC 서브모듈 상세 스펙
+│   ├── JACC_SUBMODULE_SKILL.md           # JACC 서브모듈 상세 스펙
+│   ├── 룩북_포즈라이브러리.md            # 포즈 130종 코드표 (LB P=...)
+│   └── 룩북_코디라이브러리.md            # 체형별 코디 200종 코드표 (LB O=...)
 └── assets/
     └── architecture_v1.2.jpg             # v1.2 전체 작업트리 회로도
 ```
